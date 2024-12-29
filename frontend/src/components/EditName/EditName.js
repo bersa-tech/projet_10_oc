@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { updateUserName } from "../../actions/user.action";
+import { updateUserName } from "../../actions/user.action"; // action pour mettre à jour le nom d’utilisateur.
 import "./editName.css";
 
 const EditName = ({ setIsEditing }) => {
   const dispatch = useDispatch();
-  const userProfile = useSelector((state) => state.user.userProfile); // récupère le nom d’utilisateur actuel à partir du store Redux.
+  const userProfile = useSelector((state) => state.user.userProfile);
   const [newUserName, setNewUserName] = useState("");
 
   // Fonction déclenchée lorsque l'utilisateur clique sur le bouton "Save".
@@ -17,13 +17,51 @@ const EditName = ({ setIsEditing }) => {
     }
   };
 
-  // Fonction déclenchée l'annulation lors du clique sur le bouton "Cancel".
+  // Fonction déclenchée lors du clique sur le bouton "Cancel".
   const toCancel = () => {
     setIsEditing(false); // ferme le formulaire d’édition
     setNewUserName(""); // réinitialise le champ de saisie
   };
 
-  // faire le reste apres
+  return (
+    <div className="edit-form">
+      <h2>Edit User Info</h2>
+      <div>
+        <label htmlFor="newUserName">User Name :</label>
+        <input
+          type="text"
+          id="newUserName"
+          placeholder="Enter New Username"
+          value={newUserName}
+          onChange={(e) => setNewUserName(e.target.value)}
+        />
+      </div>
+      <div>
+        <label htmlFor="firstName">First Name :</label>
+        <input
+          type="text"
+          id="firstName"
+          value={userProfile.firstName}
+          disabled
+          className="text_input"
+        />
+      </div>
+      <div>
+        <label htmlFor="lastName">Last Name :</label>
+        <input
+          type="text"
+          id="lastName"
+          value={userProfile.lastName}
+          disabled
+          className="text_input"
+        />
+        <div className="buttons-form">
+          <button onClick={toUpdateUserName}>Save</button>
+          <button onClick={toCancel}>Cancel</button>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default EditName;
