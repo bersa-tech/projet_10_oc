@@ -70,3 +70,19 @@ Static HTML and CSS has been created for most of the site and is located in: `/d
 For some of the dynamic features, like toggling user editing, there is a mock-up for it in `/designs/wireframes/edit-user-name.png`.
 
 And for the API model that you will be proposing for transactitons, the wireframe can be found in `/designs/wireframes/transactions.png`.
+
+---
+
+Voici les dépendances nécessaires pour le backend du projet Argent Bank :
+Dépendances principales (listées dans package.json) :
+
+1. express : Framework pour gérer les routes et les requêtes HTTP.
+2. mongoose : Connecteur pour utiliser MongoDB.
+3. jsonwebtoken : Gérer les tokens d'authentification (JWT).
+4. bcrypt : Hachage des mots de passe.
+5. dotenv : Gestion des variables d'environnement.
+6. cors : Permettre les requêtes cross-origin entre le frontend et le backend.
+7. nodemon : Redémarre le serveur automatiquement en cas de modifications du code (pratique pour le développement).
+
+   npm install express mongoose jsonwebtoken bcrypt dotenv cors
+   npm install --save-dev nodemon

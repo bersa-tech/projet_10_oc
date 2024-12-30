@@ -1,15 +1,54 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+—————————————————  
+PROJET 10 OC : lancer le projet  
+—————————————————  
+Merci d'installer les dépendances necessaires au projet.
 
-## Available Scripts
+- disponible dans le fichier package.json
 
-In the project directory, you can run:
+Technologies utilisées dans le frontend
 
-### `npm start`
+1. React :
+   - Crée des interfaces interactives et réactives.
+   - Divise l'écran en composants réutilisables (boutons, formulaires, tableaux).
+2. React Router :
+   - Permet de naviguer entre les pages (comme "Connexion" → "Profil").
+   - Gère les URL sans recharger la page.
+3. Redux :
+   - Stocke et gère les données partagées (comme les informations utilisateur).
+   - Ex : Si l'utilisateur se connecte, ses données sont accessibles partout dans l'app.
+4. Redux Toolkit :
+   - Simplifie l'utilisation de Redux (moins de code, plus efficace).
+5. React Redux :
+   - Connecte Redux avec React pour utiliser facilement les données dans les composants.
+6. Redux Thunk :
+   - Permet de gérer les actions asynchrones (comme un appel API).
+   - Ex : Récupérer les données du profil utilisateur depuis le backend.
+7. Axios :
+   - Sert à faire des appels API pour communiquer avec le backend.
+   - Ex : Envoyer un email et un mot de passe pour se connecter.
+8. PropTypes :
+   - Vérifie les types des données que les composants reçoivent.
+   - Ex : Un bouton devrait recevoir une chaîne de caractères pour son texte, pas un nombre.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- npm install react react-dom react-router-dom redux react-redux @reduxjs/toolkit redux-thunk axios prop-types
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+—————————————————  
+BACKEND ET MangoDB :
+Démarrer le service avec cette commande :
+
+- brew services start mongodb-community@6.0
+  Accéder à la console MongoDB et interagir avec la base de donnée :
+- mongosh
+
+—————————————————
+Backend :
+
+- utilise npm run dev:server pour démarrer le backend sur le port 3001.
+- npm run populate-db (remplir la base de données avec les utilisateurs)
+
+—————————————————
+Frontend :
+
+- utilise npm start pour démarrer l'application React sur le port 3000.
