@@ -7,6 +7,9 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import UserAccount from "./pages/UserAccount";
 import Page404 from "./pages/Page404";
+// Import du composant pour protéger certaines routes (accès réservé aux utilisateurs authentifiés).
+import PrivateRoute from "./private/PrivateRoute";
+// Le composant PrivateRoute est un composant qui vérifie si l'utilisateur est authentifié ou non. Si l'utilisateur est authentifié, il peut accéder à la route protégée. Sinon, il est redirigé vers la page de connexion.
 
 const App = () => {
   return (
@@ -14,7 +17,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/profile" element={<UserAccount />} />
+        <Route element={<PrivateRoute />}>
+          <Route path="/profile" element={<UserAccount />} />
+        </Route>
         <Route path="*" element={<Page404 />} />
       </Routes>
     </BrowserRouter>
