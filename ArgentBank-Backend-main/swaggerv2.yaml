@@ -99,16 +99,16 @@ paths:
           description: Invalid Fields
         "500":
           description: Internal Server Error
-  /user/transactions/month:
+  /user/transactions/current-month:
     get:
       tags:
         - Transactions
-      summary: Get all transactions for the month
-      description: all transactions for the month, showing DATE, DESCRIPTION (type, category, and note), AMOUNT, and BALANCE
+      summary: Get all transactions for the current month
+      description: Retrieve all transactions for the current month, showing DATE, DESCRIPTION (type, category, and note), AMOUNT, and BALANCE
       parameters:
         - in: query
-          name: month
-          description: Choose Month
+          name: current-month
+          description: Ccurrent-month
           required: true
           type: string
         - in: header
@@ -120,11 +120,11 @@ paths:
         - application/json
       responses:
         "200":
-          description: Successfully retrieved transactions
+          description: Successfully retrieved transactions for the current month
           schema:
             $ref: "#/definitions/TransactionsResponse"
         "400":
-          description: Invalid month format or parameters
+          description: Invalid format or parameters
         "401":
           description: Unauthorized, invalid token
         "500":
